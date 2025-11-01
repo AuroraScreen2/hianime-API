@@ -1,27 +1,17 @@
 {
   "name": "hianime-api",
-  "module": "index.js",
+  "main": "index.js",
   "type": "module",
   "private": true,
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
+
   "scripts": {
-    "prepare": "husky",
+    "dev": "node index.js",
+    "start": "node index.js",
     "lint": "eslint",
     "lint:fix": "eslint --fix && prettier . --write",
-    "dev": "bun --watch index.js",
-    "dev:pm2": "pm2 start --interpreter ~/.bun/bin/bun index.js",
-    "dev:stop": "pm2 stop all",
-    "start": "bun index.js",
     "test": "vitest"
   },
+
   "dependencies": {
     "@hono/swagger-ui": "^0.5.2",
     "@upstash/redis": "^1.35.0",
@@ -31,6 +21,7 @@
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.7",
     "hono": "^4.6.5",
+    "@hono/node-server": "^1.11.0",
     "hono-rate-limiter": "^0.4.2",
     "image-pixels": "^2.2.2",
     "m3u8-parser": "^7.2.0",
@@ -38,9 +29,9 @@
     "sharp": "^0.34.3",
     "uuid": "^11.1.0"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.27.0",
-    "@types/bun": "latest",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.31.0",
