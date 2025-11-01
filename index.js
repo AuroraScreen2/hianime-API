@@ -1,9 +1,12 @@
+// index.js
+import { Hono } from 'hono';
+import { serve } from '@hono/node-server'; // Node-compatible server
 import app from './src/app.js';
-import Bun from 'bun';
 
-const bunApp = Bun.serve({
-  port: 3030,
+// Start server on port 3030
+serve({
   fetch: app.fetch,
+  port: 3030,
 });
 
-console.log(`server is started goto ${bunApp.url}ui`);
+console.log('✅ Server started: http://localhost:3030/ui');
