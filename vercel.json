@@ -1,9 +1,5 @@
 {
   "version": 2,
   "bunVersion": "1.x",
-  "buildCommand": "bun run build",
-  "outputDirectory": "dist",
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.js" }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }
